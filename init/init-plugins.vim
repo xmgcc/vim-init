@@ -43,17 +43,18 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 "----------------------------------------------------------------------
 
 " 全文快速移动，<leader><leader>f{char} 即可触发
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 
 " 文件浏览器，代替 netrw
-Plug 'justinmk/vim-dirvish'
+" Plug 'justinmk/vim-dirvish'
 
 " 表格对齐，使用命令 Tabularize
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+" Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
-Plug 'chrisbra/vim-diff-enhanced'
+" Plug 'chrisbra/vim-diff-enhanced'
 
+Plug 'rhysd/vim-clang-format'
 
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
