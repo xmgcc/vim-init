@@ -14,7 +14,7 @@
 " 默认情况下的分组，可以再前面覆盖之
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
-	let g:bundle_group = ['basic', 'airline']
+	let g:bundle_group = ['basic', 'airline', 'nerdcommenter']
 	"let g:bundle_group += ['textobj', 'filetypes']
 	"let g:bundle_group += ['tags', , 'nerdtree', 'ale', 'echodoc']
 	"let g:bundle_group += ['leaderf']
@@ -94,6 +94,8 @@ augroup END
 " 基础插件
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'basic') >= 0
+	" 配对括号和引号自动补全
+	Plug 'Raimondi/delimitMate'
 
 	" 展示开始画面，显示最近编辑过的文件
 	Plug 'mhinz/vim-startify'
@@ -105,7 +107,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'xolox/vim-misc'
 
 	" 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
-	Plug 'kshenoy/vim-signature'
+	" Plug 'kshenoy/vim-signature'
 
 	" 用于在侧边符号栏显示 git/svn 的 diff
 	Plug 'mhinz/vim-signify'
@@ -178,6 +180,30 @@ if index(g:bundle_group, 'enhanced') >= 0
 	map <m-=> <Plug>(expand_region_expand)
 	map <m--> <Plug>(expand_region_shrink)
 endif
+
+
+"----------------------------------------------------------------------
+" NERDCommenter
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'nerdcommenter') >= 0
+	Plug 'scrooloose/nerdcommenter'
+	" Add spaces after comment delimiters by default
+	let g:NERDSpaceDelims = 1
+	" Use compact syntax for prettified multi-line comments
+	let g:NERDCompactSexyComs = 1
+	" Align line-wise comment delimiters flush left instead of following code indentation
+	let g:NERDDefaultAlign = 'left'
+	" Set a language to use its alternate delimiters by default
+	let g:NERDAltDelims_java = 1
+	" Allow commenting and inverting empty lines (useful when commenting a region)
+	let g:NERDCommentEmptyLines = 1
+	" Enable trimming of trailing whitespace when uncommenting
+	let g:NERDTrimTrailingWhitespace = 1
+	" Enable NERDCommenterToggle to check all selected lines is commented or not
+	let g:NERDToggleCheckAllLines = 1
+endif
+
+
 
 
 "----------------------------------------------------------------------
