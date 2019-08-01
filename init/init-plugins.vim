@@ -54,8 +54,6 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
 " Plug 'chrisbra/vim-diff-enhanced'
 
-Plug 'rhysd/vim-clang-format'
-
 Plug 'vim-scripts/matrix.vim--Yang'
 
 "----------------------------------------------------------------------
@@ -96,6 +94,8 @@ augroup END
 if index(g:bundle_group, 'basic') >= 0
     " Alternate Files quickly (.c --> .h etc)
 	Plug 'vim-scripts/a.vim'
+
+    Plug 'rhysd/vim-clang-format'
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
