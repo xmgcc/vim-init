@@ -94,6 +94,9 @@ augroup END
 " 基础插件
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'basic') >= 0
+    " Alternate Files quickly (.c --> .h etc)
+	Plug 'vim-scripts/a.vim'
+
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
 
